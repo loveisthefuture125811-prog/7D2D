@@ -1,0 +1,19 @@
+{
+  "name": "7DTD Storage Organizer",
+  "short_name": "7DTD Storage",
+  "description": "Phone-first storage box organizer for 7 Days to Die V3.2",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#111111",
+  "theme_color": "#111111",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>7DTD Storage Organizer</title>
+<meta name="theme-color" content="#111111">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="warn" class="warn" hidden></div>
+
+<main id="home" class="view">
+  <header class="top"><h1>7DTD Storage Organizer</h1></header>
+  <div class="searchwrap">
+    <input id="global-search" type="search" placeholder="Search items..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" aria-label="Search all items">
+  </div>
+  <section id="results" class="results" aria-live="polite" hidden></section>
+  <section id="grid" class="grid" aria-label="Storage boxes"></section>
+  <p id="foot" class="foot"></p>
+</main>
+
+<main id="box" class="view" hidden>
+  <header class="bar">
+    <button id="btn-back" class="navbtn" type="button">&lsaquo; Back</button>
+    <button id="btn-home" class="navbtn" type="button">Home</button>
+  </header>
+  <div class="boxhead">
+    <h2 id="box-title"></h2>
+    <p id="box-count" class="count"></p>
+  </div>
+  <div class="searchwrap">
+    <input id="box-search" type="search" placeholder="Search this box..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" aria-label="Search this box">
+  </div>
+  <ul id="items" class="items"></ul>
+  <p id="box-empty" class="empty" hidden>No matching items in this box.</p>
+</main>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
