@@ -36,9 +36,11 @@ After the first load the app shell is cached and works offline. If you update `d
 | Source entries reviewed | 937 |
 | Excluded (non-inventory) | 69 |
 | Exact duplicate source names collapsed | 6 |
-| **Included inventory items** | **862** |
+| Included from /items | 862 |
+| Supplemental, from /mods and /blocks | 187 |
+| **Total inventory items** | **1,049** |
 
-  937 − 69 − 6 = 862. `app.js` re-checks this arithmetic on every load.
+  937 − 69 − 6 = 862, plus 187 supplemental = 1,049. `app.js` re-checks this arithmetic on every load (`validation.supplementalItems` in `data.js`).
 - **Excluded (69):** 67 `Dev:` debug/cheat entries (quality armor bundles, buff injectors, XP/quest tickets, test tools), `Health Bar` (UI object), `Missing Item` (placeholder). Full names are listed in `data.js` under `excluded`.
 - **Duplicate source names (6):** `Lumberjack Hat`, `Pipe Machine Gun Bundle`, `Pipe Pistol Bundle`, `Pipe Rifle Bundle`, `Pipe Shotgun Bundle`, `Water Filter` each appear twice in the source and are stored once.
 - **One home per item.** No item appears in two boxes.
@@ -46,8 +48,8 @@ After the first load the app shell is cached and works offline. If you update `d
 ### Differences from the starting structure
 
 - Added **Workstations** (Anvil, Crucible, Cooking Pot, ...) so they don't land in Miscellaneous.
-- Removed **Armor Mods**: V3.2 has no standalone armor-mod items, only their schematics (in Schematics). Armor Parts and Armor Crafting Kit are in Armor.
-- Robotics mods exist only as schematics, so they are in Schematics.
+- **Armor Mods**, **Vehicle Mods**, **Dyes** and **Doors, Ladders & Storage Blocks** boxes added; **Weapon Mods** renamed **Weapon & Tool Mods**. The /items page doesn't list mods or blocks, so these come from https://www.7dtd.tools/mods (all 104 real mods, exact names; the 2 `Dev:` mods skipped) and https://www.7dtd.tools/blocks.
+- **Blocks are curated, not complete.** /blocks has 5,029 entries, mostly world/POI decor, colour variants, signs, vehicles and ruins. Only player-placeable ones are in: electrical, traps/turrets/mines, workstations, doors/hatches/ladders, storage crates, beds, land claim, basic building blocks. Say if you want the rest.
 - Miscellaneous holds only `Poop` and `Snowball`.
 - Several old-list items don't exist in V3.2 and were not invented: `Stone Pickaxe` and a bare `Hoarder` booster (only the Hoarder armor-style clothing set exists).
 - Items the old list missed that are now present: Rocket Launcher + bundles/parts, Auto Turret Bundle, Food Bundles, Ammo Crafting Bundle, the Legendary Steel crafting bundles, Explosive/Handgun Magazine, Sharp Sticks (a skill book), all stack items, and all the special clothing sets.

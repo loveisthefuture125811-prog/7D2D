@@ -12,6 +12,9 @@
  *  + "Workstations" added (Anvil, Crucible, Cooking Pot...) instead of dumping into Misc.
  *  - "Armor Mods" removed: V3.2 has no standalone armor-mod items, only schematics
  *    (Schematics box). Armor Parts / Armor Crafting Kit live in Armor.
+ * Supplement (187 items) from the same site's other pages: /mods (all mods, exact names) and /blocks
+ *  (curated: electrical, traps, workstations, doors, storage, building blocks). These are NOT in /items.
+ *  "Armor Mods" box is back (earlier note was wrong: Intellect Mod etc. exist). Added Vehicle Mods + Dyes boxes.
  * Notes: no "Stone Pickaxe" exists in the V3.2 source; stack/bundle items are all kept.
  */
 const STORAGE_DATA = {
@@ -22,13 +25,18 @@ const STORAGE_DATA = {
   "url": "https://www.7dtd.tools/items",
   "gameVersion": "V3.2",
   "sourceItemCount": 937,
-  "retrieved": "2026-10-06"
+  "retrieved": "2026-10-06",
+  "supplemental": [
+   "https://www.7dtd.tools/mods (106 mods; 2 Dev: entries skipped)",
+   "https://www.7dtd.tools/blocks (5,029 blocks; only player-placeable ones curated in)"
+  ]
  },
  "validation": {
   "sourceEntriesReviewed": 937,
   "excludedEntries": 69,
   "exactDuplicateSourceEntries": 6,
-  "includedInventoryItems": 862
+  "includedInventoryItems": 1049,
+  "supplementalItems": 187
  },
  "exactDuplicateSourceNames": [
   "Lumberjack Hat",
@@ -288,11 +296,19 @@ const STORAGE_DATA = {
    "items": [
     "Advanced Bellows",
     "Anvil",
+    "Apiary",
     "Beaker",
     "Bucket",
+    "Campfire",
+    "Cement Mixer",
+    "Chemistry Station",
+    "Chicken Coop",
     "Cooking Grill",
     "Cooking Pot",
-    "Crucible"
+    "Crucible",
+    "Dew Collector",
+    "Forge",
+    "Workbench"
    ]
   },
   {
@@ -318,14 +334,127 @@ const STORAGE_DATA = {
   },
   {
    "id": "weapon-mods",
-   "name": "Weapon Mods",
+   "name": "Weapon & Tool Mods",
    "items": [
+    "Arrow Rest Mod",
+    "Barbed Wire Mod",
+    "Barrel Extender Mod",
+    "Bipod Mod",
+    "Bunker Buster Mod",
+    "Burning Shaft Mod",
+    "Buttkick 3000 Mod",
+    "Buttkick 4000 Mod - Perks",
+    "Cripple 'Em Mod",
+    "Diamond Blade Tip Mod",
+    "Drum Magazine Mod",
+    "Ergonomic Grip Mod",
+    "Fireman's Axe Mod",
+    "Fore Grip Mod",
+    "Fortifying Grip Mod",
+    "Grave Digger Mod",
+    "Iron Breaker Mod",
+    "Laser Sight Mod",
+    "Magazine Extender Mod",
     "Melee Mods Bundle 01",
     "Melee Mods Bundle 02",
     "Melee Mods Bundle 03",
+    "Metal Chain Mod",
+    "Metal Spikes Mod",
+    "Motor Tool Large Tank Mod",
+    "Motor Tool Small Tank Mod",
+    "Muzzle Brake Mod",
+    "Polymer String Mod",
+    "Rad Remover Mod",
     "Ranged Mods Bundle 01",
     "Ranged Mods Bundle 02",
-    "Ranged Mods Bundle 03"
+    "Ranged Mods Bundle 03",
+    "Reflex Sight Mod",
+    "Retracting Stock Mod",
+    "Sawed-Off Shotgun Mod",
+    "Scope 2x Mod",
+    "Scope 4x Mod",
+    "Scope 8x Mod",
+    "Serrated Blade Mod",
+    "Shotgun Choke Mod",
+    "Shotgun Duckbill Mod",
+    "Shotgun Tube Extender Mod",
+    "Silencer Mod",
+    "Structural Brace Mod",
+    "Stun Baton Repulsor Mod",
+    "Tempered Blade Mod",
+    "The Decapitizer",
+    "The Hunter Mod",
+    "Trigger Group: Burst Mod",
+    "Trigger Group: Full Auto Mod",
+    "Trigger Group: Semi Mod",
+    "Weapon Flashlight Mod",
+    "Weighted Head Mod",
+    "Wood Splitter Mod"
+   ]
+  },
+  {
+   "id": "armor-mods",
+   "name": "Armor Mods",
+   "items": [
+    "Advanced Armor Fittings Mod",
+    "Advanced Armor Plating Mod",
+    "Advanced Muffled Connectors Mod",
+    "Agility Mod",
+    "Armor Double Pocket Mod",
+    "Armor Fittings Mod",
+    "Armor Plating Mod",
+    "Armor Pocket Mod",
+    "Armor Quad Pocket Mod",
+    "Armor Triple Pocket Mod",
+    "Bandolier Mod",
+    "Cigar Mod",
+    "Fortitude Mod",
+    "Helmet Light Mod",
+    "Impact Bracing Mod",
+    "Intellect Mod",
+    "Jump Jets Mod",
+    "Muffled Connectors Mod",
+    "Night Vision Mod",
+    "Patchwork Insulated Armor Mod",
+    "Perception Mod",
+    "Radiation Ready Mod",
+    "Stealth Boots Mod",
+    "Strength Mod",
+    "Tattered Insulated Armor Mod",
+    "ThermaCore Insulated Armor Mod",
+    "Treasure Hunter's Mod",
+    "Water Purifier Mod"
+   ]
+  },
+  {
+   "id": "vehicle-mods",
+   "name": "Vehicle Mods",
+   "items": [
+    "Vehicle Armor Mod",
+    "Vehicle Expanded Seating Mod",
+    "Vehicle Fuel Saver Mod",
+    "Vehicle Mega Mod",
+    "Vehicle Off Road Headlights Mod",
+    "Vehicle Plow Mod",
+    "Vehicle Reserve Fuel Tank Mod",
+    "Vehicle Storage Mod",
+    "Vehicle Super Charger Mod"
+   ]
+  },
+  {
+   "id": "dyes",
+   "name": "Dyes",
+   "items": [
+    "Dye: Black",
+    "Dye: Blue",
+    "Dye: Brown",
+    "Dye: Green",
+    "Dye: Orange",
+    "Dye: Pink",
+    "Dye: Purple",
+    "Dye: Red",
+    "Dye: Solvent",
+    "Dye: Yellow"
    ]
   },
   {
@@ -633,18 +762,62 @@ const STORAGE_DATA = {
    "id": "building",
    "name": "Building Materials",
    "items": [
+    "Brick Block",
+    "Bulletproof Glass Block",
+    "Business Glass Block",
     "Cement",
     "Clay Soil",
+    "Cobblestone Block",
     "Cobblestone Rocks",
+    "Concrete Barrier",
+    "Concrete Block",
     "Concrete Mix",
     "Crushed Sand",
     "Forged Iron",
     "Forged Steel",
+    "Glass Block",
+    "Iron Bars",
     "Nails",
+    "Sandbags",
     "Small Stone",
     "Stack of Small Stone (6000)",
     "Stack of Wood (6000)",
-    "Wood"
+    "Steel Block",
+    "Wood",
+    "Wood Block",
+    "Wood Fence"
+   ]
+  },
+  {
+   "id": "doors-storage",
+   "name": "Doors, Ladders & Storage Blocks",
+   "items": [
+    "Bedroll",
+    "Hardened Chest",
+    "Iron Cellar Door",
+    "Iron Door",
+    "Iron Double Door",
+    "Iron Hatch",
+    "Iron Ladder",
+    "Iron Shutters",
+    "Iron Storage Crate",
+    "Land Claim Block",
+    "Reinforced Chest",
+    "Reinforced Drawbridge",
+    "Steel Cellar Door",
+    "Steel Door",
+    "Steel Door Double",
+    "Steel Hatch",
+    "Steel Ladder",
+    "Steel Shutters",
+    "Steel Storage Crate",
+    "Wood Cellar Door",
+    "Wood Door",
+    "Wood Double Door",
+    "Wood Hatch",
+    "Wood Shutters",
+    "Wood Storage Crate",
+    "Wooden Ladder"
    ]
   },
   {
@@ -875,6 +1048,7 @@ const STORAGE_DATA = {
     "Farm Bundle 01",
     "Farm Bundle 02",
     "Farm Bundle 03",
+    "Farm Plot",
     "Goldenrod Flower",
     "Honey Extractor",
     "Hops Flower",
@@ -892,13 +1066,33 @@ const STORAGE_DATA = {
    "id": "electrical",
    "name": "Electrical",
    "items": [
+    "Basic Light Bulb",
+    "Battery Bank",
     "Battery Bank Bundle",
+    "Electric Timer Relay",
+    "Electric Wire Relay",
     "Electrical Parts",
+    "Fluorescent Light",
+    "Generator Bank",
     "Generator Bank Bundle",
+    "Industrial Light",
+    "Industrial Light Bulb",
+    "Lantern",
     "Lead Car Battery",
+    "Motion Sensor",
+    "Old Lantern",
     "Security Camera Bundle",
+    "Solar Bank",
     "Solar Bank Bundle",
     "Solar Cell",
+    "Speaker",
+    "Spotlight",
+    "Switch",
+    "Torch Wall Holder",
+    "Trigger Plate 1x1",
+    "Trigger Plate 1x5",
+    "Tripwire Post",
+    "Wall Torch",
     "Wire Tool"
    ]
   },
@@ -906,14 +1100,30 @@ const STORAGE_DATA = {
    "id": "traps",
    "name": "Traps & Defense",
    "items": [
+    "Air Filter Land Mine",
     "Auto Turret Bundle",
+    "Barbed Wire",
+    "Barbed Wire Fence",
+    "Blade Trap",
     "Blade Trap Bundle",
+    "Cooking Pot Mine",
+    "Dart Trap",
     "Dart Trap Bundle",
+    "Dynamic Grate Trap",
+    "Electric Fence Post",
     "Electrical Traps",
+    "Flamethrower Trap",
+    "Hubcap Land Mine",
     "Iron Dart (Ammo)",
+    "Iron Spikes Trap",
+    "M60 Auto Turret",
+    "Shotgun Auto Turret",
     "Shotgun Turret Bundle",
+    "SMG Auto Turret",
+    "Tin Land Mine",
     "Traps Bundle 01",
-    "Traps Bundle 02"
+    "Traps Bundle 02",
+    "Wood Spikes Trap"
    ]
   },
   {
@@ -922,6 +1132,13 @@ const STORAGE_DATA = {
    "items": [
     "Legendary Robotics Crafting Bundle",
     "Robotic Drone",
+    "Robotic Drone Armor Plating Mod",
+    "Robotic Drone Cargo Mod",
+    "Robotic Drone Medic Mod",
+    "Robotic Drone Morale Booster Mod",
+    "Robotic Drone Stun Mod",
+    "Robotic Drone Weapon Mod",
+    "Robotic Headlamp Mod",
     "Robotic Sledge",
     "Robotic Turret",
     "Robotics Crafting Bundle",
@@ -1217,8 +1434,10 @@ const STORAGE_DATA = {
    "id": "misc",
    "name": "Miscellaneous",
    "items": [
+    "Cassadore Supplies",
     "Poop",
-    "Snowball"
+    "Snowball",
+    "White River Supplies"
    ]
   }
  ]

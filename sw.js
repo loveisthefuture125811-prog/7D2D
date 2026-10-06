@@ -1,4 +1,4 @@
-const CACHE = "7dtd-storage-v1";
+const CACHE = "7dtd-storage-v2";
 const SHELL = ["./", "index.html", "style.css", "app.js", "data.js", "manifest.webmanifest", "icon.svg"];
 
 self.addEventListener("install", (e) => {

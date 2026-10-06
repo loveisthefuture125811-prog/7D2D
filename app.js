@@ -53,7 +53,7 @@ function validateData(data, index) {
   const v = data.validation;
   if (v) {
     if (v.includedInventoryItems !== total) errors.push("validation.includedInventoryItems " + v.includedInventoryItems + " != actual " + total);
-    const sum = total + v.excludedEntries + v.exactDuplicateSourceEntries;
+    const sum = total - (v.supplementalItems || 0) + v.excludedEntries + v.exactDuplicateSourceEntries;
     if (sum !== v.sourceEntriesReviewed) errors.push("Source accounting mismatch: " + sum + " != " + v.sourceEntriesReviewed);
     if (data.source && v.sourceEntriesReviewed !== data.source.sourceItemCount) errors.push("sourceItemCount mismatch");
     const ex = (data.excluded || []).reduce((n, g) => n + g.names.length, 0);
